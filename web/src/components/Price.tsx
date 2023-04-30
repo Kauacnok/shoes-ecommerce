@@ -50,9 +50,9 @@ export function Price({ productName, price, STRIPE_SECRET_KEY }: PriceProps) {
 
 	return (
 		<>
-			<div className="flex flex-col justify-start w-full h-1/2 mt-4 gap-10">
-        <h1 className="text-2xl text-center tracking-tight font-black text-zinc-800"><Balancer>{productName}</Balancer></h1>
-        <div className="flex justify-evenly items-center w-full gap-5">
+			<div className="flex flex-col justify-start w-full h-1/2 mt-4 gap-10 md:h-4/5 md:w-1/2 md:justify-center">
+        <h1 className="text-2xl text-center tracking-tight font-black text-zinc-800 md:text-4xl"><Balancer>{productName}</Balancer></h1>
+        <div className="flex justify-evenly items-center w-full gap-5 md:justify-between md:w-[90%]">
           <h3 className="text-xs"><span className="text-lg font-bold mr-1">R$</span>{(productPrice * productQuantity).toFixed(2)}</h3>
 					<div className="flex justify-center items-center gap-5">
 						{ productQuantity == 1 ? <button disabled><MinusCircle size={24} color="#9CA3AF" weight="bold" /></button> : <button onClick={decreaseQuantityProduct}><MinusCircle size={24} color="#EF4444" weight="bold" /></button> }
@@ -60,7 +60,7 @@ export function Price({ productName, price, STRIPE_SECRET_KEY }: PriceProps) {
 						{ productQuantity == 10 ? <button disabled><PlusCircle size={24} color="#9CA3AF" weight="bold" /></button> : <button onClick={increaseQuantityProduct}><PlusCircle size={24} color="#10B981" weight="bold" /></button> }
 					</div>
         </div>
-        { isLoading ? <button className="bg-purple-500 flex justify-center items-center px-4 py-2 rounded justify-self-center text-center text-white font-semibold hover:bg-purple-600 transition" disabled><CircleNotch size={24} color="#EFEFEF" weight="bold" className="animate-spin" /></button> : <button className="bg-purple-500 px-4 py-2 rounded justify-self-center text-center text-white font-semibold hover:bg-purple-600 transition" onClick={handleCheckout}>Comprar</button> }
+        { isLoading ? <button className="bg-purple-500 flex justify-center items-center px-4 py-2 rounded justify-self-center text-center text-white font-semibold hover:bg-purple-600 transition md:w-1/2" disabled><CircleNotch size={24} color="#EFEFEF" weight="bold" className="animate-spin" /></button> : <button className="bg-purple-500 px-4 py-2 rounded justify-self-center text-center text-white font-semibold hover:bg-purple-600 transition md:w-1/2" onClick={handleCheckout}>Comprar</button> }
       </div>	
 		</>
 	)
