@@ -1,11 +1,11 @@
 import Image from 'next/image'
 import Stripe from 'stripe'
-import Balancer from 'react-wrap-balancer'
 
 import { Price } from '../components/Price'
 
 export default async function Home() {
-  const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
+  const STRIPE_SECRET_KEY = process.env.STRIPE_SECRET_KEY!
+  const stripe = new Stripe(STRIPE_SECRET_KEY, {
     apiVersion: '2022-11-15'
   })
 
@@ -21,13 +21,7 @@ export default async function Home() {
         <div className="flex flex-col justify-center items-center h-1/2 py-4 border-b-2 border-gray-300">
           <Image src={`${product.images[0]}`} alt="Imagem mostrando o tênis branco com símbolo da nike chamado de Nike Shoes Air Force 1" width={100} height={100} className="w-full h-full" />
         </div>
-        <div className="flex flex-col justify-start items-center w-full h-1/2 mt-4 gap-10">
-          <h1 className="text-2xl text-center tracking-tight font-black text-zinc-800"><Balancer>{product.name}</Balancer></h1>
-          <div className="flex justify-between items-center w-full gap-5">
-            <Price price={price.unit_amount} />
-          </div>
-          <div className="bg-purple-400 px-4 py-2 rounded justify-self-center text-center text-white cursor-pointer hover:bg-purple-500 transition">Comprar</div>
-        </div>
+        <Price productName={product.name!} price={price.unit_amount!} STRIPE_SECRET_KEY={STRIPE_SECRET_KEY} />
       </section>
     </main>
   )
