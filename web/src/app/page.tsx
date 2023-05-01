@@ -19,7 +19,7 @@ export default async function Home() {
           <h1 className="w-full text-center text-white tracking-tight font-black">OFERTA EXCLUSIVA</h1>
         </div>
         <div className="flex flex-col bg-contain justify-center items-center h-1/2 py-4 border-b-2 border-gray-300 md:h-4/5 md:w-1/2 md:border-b-0 md:border-r-2">
-          <Image src={`${product.images[0]}`} alt="Imagem mostrando o tênis branco com símbolo da nike chamado de Nike Shoes Air Force 1" width={100} height={100} className="w-full h-full md:w-[250px] md:h-[250px] lg:w-[400px] lg:h-[400px]" />
+          <Image src={`${product.images[0]}`} alt="Imagem mostrando o tênis branco com símbolo da nike chamado de Nike Shoes Air Force 1" width={100} height={100} className="w-full h-full md:w-[250px] md:h-[250px] lg:w-[300px] lg:h-[300px]" />
         </div>
         <Price productName={product.name!} price={price.unit_amount!} STRIPE_SECRET_KEY={STRIPE_SECRET_KEY} />
       </section>
