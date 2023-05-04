@@ -1,0 +1,7 @@
+{
+	"routes": [
+		{ "src": "/", "dest": "/", "status": 200 },
+		{ "src": "/success/", "dest": "/success/" },
+		{ "src": "/cancel/", "dest": "/cancel/" }
+	]
+}

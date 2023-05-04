@@ -8,10 +8,11 @@ import Balancer from 'react-wrap-balancer'
 interface PriceProps {
 	productName: string,
 	price: number,
-	STRIPE_SECRET_KEY: string
+	STRIPE_SECRET_KEY: string,
+	URL_WEBSITE: string
 }
 
-export function Price({ productName, price, STRIPE_SECRET_KEY }: PriceProps) {
+export function Price({ productName, price, STRIPE_SECRET_KEY, URL_WEBSITE }: PriceProps) {
 	const [productQuantity, setProductQuantity] = useState(1)
 	const [productPrice, setProductPrice] = useState(price / 100)
 	const [isLoading, setIsLoading] = useState(false)
@@ -41,8 +42,8 @@ export function Price({ productName, price, STRIPE_SECRET_KEY }: PriceProps) {
   			}
   		],
   		mode: 'payment',
-  		success_url: 'http://localhost:3000/success/',
-  		cancel_url: 'http://localhost:3000/cancel/'
+  		success_url: `${URL_WEBSITE}/success/`,
+  		cancel_url: `${URL_WEBSITE}/cancel/`
   	})
 
   	window.location.href = session.url!

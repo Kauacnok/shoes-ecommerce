@@ -5,6 +5,7 @@ import { Price } from '../components/Price'
 
 export default async function Home() {
   const STRIPE_SECRET_KEY = process.env.STRIPE_SECRET_KEY!
+  const URL_WEBSITE = process.env.URL_WEBSITE!
   const stripe = new Stripe(STRIPE_SECRET_KEY, {
     apiVersion: '2022-11-15'
   })
@@ -21,7 +22,7 @@ export default async function Home() {
         <div className="flex flex-col bg-contain justify-center items-center h-1/2 py-4 border-b-2 border-gray-300 md:h-4/5 md:w-1/2 md:border-b-0 md:border-r-2">
           <Image src={`${product.images[0]}`} alt="Imagem mostrando o tênis branco com símbolo da nike chamado de Nike Shoes Air Force 1" width={100} height={100} className="w-full h-full md:w-[250px] md:h-[250px] lg:w-[300px] lg:h-[300px]" />
         </div>
-        <Price productName={product.name!} price={price.unit_amount!} STRIPE_SECRET_KEY={STRIPE_SECRET_KEY} />
+        <Price productName={product.name!} price={price.unit_amount!} STRIPE_SECRET_KEY={STRIPE_SECRET_KEY} URL_WEBSITE={URL_WEBSITE} />
       </section>
     </main>
   )
