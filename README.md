@@ -32,7 +32,7 @@ $ npm run dev
 
 ```
 
-renomeie o env.example para .env e crie uma conta na [Stripe](https://stripe.com/br) e obter os valores STRIPE_PUBLISHABLE_KEY e STRIPE_SECRET_KEY
+renomeie o env.example para .env e crie uma conta na [Stripe](https://stripe.com/br) e obter os valores STRIPE_PUBLISHABLE_KEY e STRIPE_SECRET_KEY, e o URL_WEBSITE com o app rodando localmente será http://localhost:3000
 
 ## 💻 Projeto
 
@@ -40,6 +40,11 @@ O Shoes Ecommerce é um site que simula a venda de um produto usando a plataform
 
 Feedbacks sempre são bem vindos :)
 
+## 🔖 Layout
+
+Você pode visualizar o layout do projeto através do link abaixo:
+
+- [Acessar o site](https://shoes-ecommerce-rosy.vercel.app/)
 
 ## 📖 O que eu aprendi
 
